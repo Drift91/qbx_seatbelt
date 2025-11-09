@@ -48,7 +48,7 @@ end
 local function seatbelt()
     while cache.vehicle do
         local sleep = 1000
-        if playerState.seatbelt or playerState.harness then
+        if not config.exitForceUnbuckles and playerState.seatbelt or playerState.harness then
             sleep = 0
             DisableControlAction(0, 75, true)
             DisableControlAction(27, 75, true)
